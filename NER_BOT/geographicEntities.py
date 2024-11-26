@@ -24,7 +24,7 @@ Extract named entities from the given text, focusing on people, organizations, l
 Input text: {text}
 
 Provide a structured analysis in the following markdown table format:
-| Name | Entity_Type | City | Country | Country_Code |
+| Name | Entity_Type | address |City | Country | Country_Code |
 
 Guidelines:
 - Name: The extracted entity name
@@ -59,7 +59,7 @@ class EntityExtractor:
         try:
             return ChatGroq(
                 api_key=self.api_key,
-                model="mixtral-8x7b-32768",
+                model="llama-3.2-3b-preview",
                 temperature=0,
                 max_tokens=1000,
                 timeout=15,
